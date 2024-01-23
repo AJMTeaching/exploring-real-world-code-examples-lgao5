@@ -1,0 +1,145 @@
+# Assignment: Exploring Real-World Code Examples
+## Introduction
+In our everyday lives, we interact with a myriad of software applications, often without realizing the complex code that powers them. From the moment we silence our morning alarm, to checking the weather forecast, or even making an online purchase, software is an integral part of our daily routine. As we embark on our journey to learn coding, it's essential to understand how these applications are built and function. This assignment, designed for beginners, leverages our newly acquired skills in using GitHub and other online repositories. It's an opportunity to explore and connect with the real-world applications of code.
+
+## Objective
+Your task is to delve into the world of coding by finding real-life examples of code that power the software applications you use daily. This exercise will help you understand how theoretical coding concepts are applied in practical, real-world scenarios.
+
+## Assignment Details
+Research and Exploration: Using online repositories like GitHub, search for code examples that align with the everyday software applications described in the provided prose blurbs.
+
+Link and Line Numbers: For each example, provide the link to the code repository and specify the exact line numbers where the relevant code is located. This will help you practice navigating through code repositories and understanding code structure.
+
+Documentation: Along with each link, write a brief description of what the code does and how it relates to the functionality of the application in the real world.
+
+## Prose Blurbs for Exploration
+- Code that specifies when an alarm clock should start making audible sounds.
+https://github.com/ROSHAN-KHANDAGALE/Alarm-Clock/blob/main/main.py 
+lines 16 & 17 {    
+    status.config(text="Alarm is ringing!")
+    winsound.Beep(1000, 4000)  # Beep sound for 2 seconds
+}
+Description: In the while loop above lines 16 and 17, it's set to run all those things while the local time is not the same as the set alarm time, so when the two times are equal, the code goes past the while loop and reaches lines 16 and 17. This changes the status of the alarm clock to say, "Alarm is ringing!" followed by the Beep function from the imported winsound package. 
+
+- Code for a rocket targeting system.
+https://github.com/123nadeem/Smart-Rocket-System/blob/main/main.py
+lines 202 & 203 {
+    if self.completed:
+    self.fitness *= 10
+}
+Description: At line 196, there is a function that calculates the "fitness" of the rocket relative to the target position. From the way the program was written, I think that we would want the fitness to be higher rather than lower, so in the case of self.completed, the fitness of the rocket is multipled by 10, thus increasing the value of it. 
+
+- File compression utility algorithm.
+https://github.com/ayonious/File-Compression/blob/master/build.gradle
+line 14 {
+    from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+Description: In Unix, there's a command called "zip" that zips your files for you. Since I couldn't really find an example on a repository for that specific case, this one should be at least somewhat equivalent. Even though it is written in Java, it basically collects data from the runtime frame and zips it into a smaller, compressed file. 
+
+- Weather forecasting algorithm.
+https://github.com/Nixtla/neuralforecast/blob/main/README.md
+lines 23-26 {
+    # Plot predictions
+    fig, ax = plt.subplots(1, 1, figsize = (20, 7))
+    Y_hat_df = Y_test_df.merge(Y_hat_df, how='left', on=['unique_id', 'ds'])
+    plot_df = pd.concat([Y_train_df, Y_hat_df]).set_index('ds')
+}
+Description: There isn't really a specific line that is the weather forecasting algorithm itself, but these few lines are in the README file that describe the plot predictions of an algorithm that builds into a machine learning program.
+
+- E-commerce checkout system process.
+https://www.progress.com/documentation/sitefinity-cms/10/for-developers-the-checkout-process/for-developers-write-code-to-do-the-complete-checkout-process
+In part 2, lines 187-194 {
+    CartPayment cartPayment = ordersManager.CreateCartPayment();
+
+    cartPayment.PaymentMethodId = paymentmethod.Id;
+    cartPayment.PaymentMethodType = paymentmethod.PaymentMethodType;
+    cartPayment.CreditCardCustomerName = customer.CustomerFirstName;
+    cartPayment.CreditCardNumber = MockCreditCardNumber;
+
+    cartOrder.Payments.Add(cartPayment);
+}
+Description: At line 187, a CartPayment object called cartPayment is created. Since it's a CartPayment object, it has access to all the methods that these objects have, and the few lines of code following line 187 fill in the payment information. 
+
+- Social media post scheduler.
+https://github.com/mfcodeworks/Social-Media-Post-Scheduler/blob/master/process-post.php
+lines 52-54 {
+    //If post is sheduled for now
+    if($compareDate <= $dateNow) {
+    // Handle new posts
+    echo "Posting Now!\n\n";
+}
+Description: These lines of code run when the date set for the post is the same or less than the current date, sort of like a timer. In the lines of code after the segment I showed, it shows different success/failure messages for whether the post happening on different media platforms like Facebook, Twitter, Instagram, etc. 
+
+- Fitness app calorie counter.
+https://github.com/asdf25jae/fitness-calorie-counter/blob/master/server.js
+lines 61-66 {
+    //set the food qualities that came from the POST data
+	food.name = req.body.name;
+	food.calories = req.body.calories;
+	food.protein = req.body.protein;
+	food.fat = req.body.fat;
+	food.carbs = req.body.carbs;
+}
+Description: I couldn't find a specific line that added up all the total calories, but this is where the calorie count of each food item is stored, so I figured it was probably good enough for this question. The code used to make a counter would just be something using the '+=' operator to get a total count. 
+
+- Online voting system mechanics.
+https://github.com/shah-deep/Online-Voting-System/blob/main/registerVoter.py
+lines 15-19 {
+    vid = df.taking_data_voter(name, sex, zone, city, passw)
+    for widget in frame1.winfo_children():
+    widget.destroy()
+    txt = "Registered Voter with\n\n VOTER I.D. = " + str(vid)
+    Label(frame1, text=txt, font=('Helvetica', 18, 'bold')).grid(row = 2, column = 1, columnspan=2)
+}
+Description: This part of the code asks for the specific voter's name, sex, zone, city, and password. Then it responds with a message saying "Registered Voter with VOTER I.D." following by the information that was provided. 
+
+- Automated email response system.
+https://github.com/shadmanh123/Automated-Email-Response-System/blob/main/parta.py
+line 24 & 36-38 {
+    message_subject_1 = "Problem Saving File"
+    ...
+    if message_subject_saved == "Problem Saving File" or message_subject_saved == "1" or message_subject_saved.lower() == message_subject_1.lower():
+    message_subject_one = "    Thank you for contacting our company. Saving a file is done by pressing CTRL-S (Windows) or CMD-S (Mac)."
+    message_subject_saved = message_subject_one
+}
+Description: This is only one example from the repository I linked, but it basically is looking for a specific problem from the original email, then pairs it with a pre-written response. Afterwards, the user will receive the response that correlated to whatever their email was about.
+
+- Notifications
+https://github.com/CodeSeven/toastr/blob/master/toastr.js
+lines 46-54 {
+    function error(message, title, optionsOverride) {
+        return notify({
+            type: toastType.error,
+            iconClass: getOptions().iconClasses.error,
+            message: message,
+            optionsOverride: optionsOverride,
+            title: title
+        });
+    }
+}
+Description: When there's an error message, the program will notify the toaster's user about whatever is in the message, the title of the error, and any available override options.
+
+- Adding new items to a planner
+https://github.com/Winterx0/RememberPlanner/blob/main/Remember.cpp
+line 13 {
+    addListItem itemlist[MAX_SIZE];
+}
+Description: A single line in the main method that adds an item to a list called itemlist. The size of itemlist is whatever the maximum list size is in C++, which according to Quora is ~4 billion elements.
+
+- Logging into an account
+https://github.com/Ved-programmer/Login-System/blob/master/Login%20system/login.py
+lines 3-4 {
+    def login_or_not(username, password):
+        return backEndUtilityFuncs.checkIfCorrect(username, password)
+}
+Description: When the program runs the function login_or_not, it takes the parameters username and password and uses another method called checkIfCorrect. If it returns as True, then the user is allowed access to the account. If False, then it denies access to the account. 
+
+## Submission Format
+
+Document Title: "Exploring Code in Daily Life"
+Content Structure: For each of the nine blurbs, include a heading with the blurb title, followed by your findings (link and line numbers) and a brief description. Also, do the same for 3 kinds of tools you use every day (for example: how the email app knows there are new messages, how my calendar adds new items, how my video game authenticates my user/password)
+Length: No more than two paragraphs per blurb.
+Evaluation Criteria
+Accuracy: Correctly identifying relevant sections of code.
+Clarity: Clear and concise descriptions of how the code functions.
+Research Skills: Ability to effectively use online resources like GitHub.
